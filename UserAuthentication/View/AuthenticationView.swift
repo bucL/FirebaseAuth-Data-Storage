@@ -10,69 +10,63 @@ import SwiftUI
 struct AuthenticationView: View {
     
     var body: some View {
-        
-        VStack{
-            SignInView()
-            NavigationLink("Sign Up!", destination: SignUpView())
+        VStack {
+            VStack {
+                SignInView()
+                NavigationLink(destination: SignUpView()) {
+                    Text("Sign up!")
+                }
+            }
         }
-        
-     }
+    }
 }
 
 struct SignInView: View {
-    @EnvironmentObject var user : UserViewModel
-    @State private var email = ""
-    @State private var password = ""
+    @EnvironmentObject var user: UserViewModel
+    @State private var email: String = ""
+    @State private var password: String = ""
     
     var body: some View {
-        VStack{
-            TextField("Email...", text: $email)
-
+        VStack {
+            TextField("Email", text: $email)
+                .autocapitalization(.none)
                 .disableAutocorrection(true)
-            SecureField("Password...", text: $password)
-
+            SecureField("Password", text: $password)
+                .autocapitalization(.none)
                 .disableAutocorrection(true)
-            
-            
-            Button (action: {
+            Button(action: {
                 user.signIn(email: email, password: password)
             }) {
-                
                 Text("Sign In")
-                
             }
         }
     }
 }
 
-
 struct SignUpView: View {
-    @EnvironmentObject var user : UserViewModel
-    @State private var email = ""
-    @State private var password = ""
-    @State private var firstName = ""
-    @State private var lastName = ""
+    @EnvironmentObject var user: UserViewModel
+    @State private var email: String = ""
+    @State private var firstName: String = ""
+    @State private var lastName: String = ""
+    @State private var password: String = ""
     
     var body: some View {
-        VStack{
-            TextField("First Name...", text: $firstName)
-            TextField("Last Name...", text: $lastName)
-            TextField("Email...", text: $email)
+        VStack {
+            TextField("First Name", text: $firstName)
+            TextField("Last Name", text: $lastName)
+            TextField("Email", text: $email)
+                .autocapitalization(.none)
                 .disableAutocorrection(true)
-            SecureField("Password...", text: $password)
-
+            SecureField("Password", text: $password)
+                .autocapitalization(.none)
                 .disableAutocorrection(true)
-                        
-            
-            Button (action: {
+            Button(action: {
                 user.signUp(email: email, firstName: firstName, lastName: lastName, password: password)
-            })
-            
-            Text("Sign Up")
-                
+            }) {
+                Text("Sign Up")
             }
         }
     }
-    
+}
     
 
