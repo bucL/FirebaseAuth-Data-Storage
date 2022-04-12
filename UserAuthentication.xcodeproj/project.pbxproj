@@ -16,6 +16,11 @@
 		68A6BCFB280567B700E0811F /* UserAuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6BCFA280567B700E0811F /* UserAuthenticationTests.swift */; };
 		68A6BD05280567B700E0811F /* UserAuthenticationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6BD04280567B700E0811F /* UserAuthenticationUITests.swift */; };
 		68A6BD07280567B700E0811F /* UserAuthenticationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6BD06280567B700E0811F /* UserAuthenticationUITestsLaunchTests.swift */; };
+		68D8578528056ED600D0D94D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68D8578428056ED600D0D94D /* GoogleService-Info.plist */; };
+		68D857872805705400D0D94D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D857862805705400D0D94D /* User.swift */; };
+		68D85789280570B700D0D94D /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D85788280570B700D0D94D /* UserViewModel.swift */; };
+		68D8578B2805769D00D0D94D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D8578A2805769D00D0D94D /* ProfileView.swift */; };
+		68D8578D280576A700D0D94D /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D8578C280576A700D0D94D /* AuthenticationView.swift */; };
 		FFD7A98066655918C6230409 /* Pods_UserAuthenticationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E237743513EF3AEE0BA9EE /* Pods_UserAuthenticationTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +55,11 @@
 		68A6BD00280567B700E0811F /* UserAuthenticationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserAuthenticationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		68A6BD04280567B700E0811F /* UserAuthenticationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthenticationUITests.swift; sourceTree = "<group>"; };
 		68A6BD06280567B700E0811F /* UserAuthenticationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthenticationUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		68D8578428056ED600D0D94D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		68D857862805705400D0D94D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		68D85788280570B700D0D94D /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		68D8578A2805769D00D0D94D /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		68D8578C280576A700D0D94D /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		8DB36628D7C17EE901170719 /* Pods-UserAuthentication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserAuthentication.debug.xcconfig"; path = "Target Support Files/Pods-UserAuthentication/Pods-UserAuthentication.debug.xcconfig"; sourceTree = "<group>"; };
 		94E237743513EF3AEE0BA9EE /* Pods_UserAuthenticationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UserAuthenticationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		973E77A03E90FB69A1F5562E /* Pods-UserAuthentication-UserAuthenticationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserAuthentication-UserAuthenticationUITests.debug.xcconfig"; path = "Target Support Files/Pods-UserAuthentication-UserAuthenticationUITests/Pods-UserAuthentication-UserAuthenticationUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -96,13 +106,13 @@
 				58038A520CB4AD37A609B5A4 /* Pods-UserAuthenticationTests.debug.xcconfig */,
 				A295FA3A472E4218A4A2DF51 /* Pods-UserAuthenticationTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		68A6BCDD280567B500E0811F = {
 			isa = PBXGroup;
 			children = (
+				68D8578428056ED600D0D94D /* GoogleService-Info.plist */,
 				68A6BCE8280567B500E0811F /* UserAuthentication */,
 				68A6BCF9280567B700E0811F /* UserAuthenticationTests */,
 				68A6BD03280567B700E0811F /* UserAuthenticationUITests */,
@@ -125,8 +135,9 @@
 		68A6BCE8280567B500E0811F /* UserAuthentication */ = {
 			isa = PBXGroup;
 			children = (
-				68A6BCE9280567B500E0811F /* UserAuthenticationApp.swift */,
-				68A6BCEB280567B500E0811F /* ContentView.swift */,
+				68D8578328056DDD00D0D94D /* ViewModel */,
+				68D8578228056DD800D0D94D /* Model */,
+				68D8578128056DD400D0D94D /* View */,
 				68A6BCED280567B700E0811F /* Assets.xcassets */,
 				68A6BCEF280567B700E0811F /* Preview Content */,
 			);
@@ -156,6 +167,33 @@
 				68A6BD06280567B700E0811F /* UserAuthenticationUITestsLaunchTests.swift */,
 			);
 			path = UserAuthenticationUITests;
+			sourceTree = "<group>";
+		};
+		68D8578128056DD400D0D94D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				68A6BCE9280567B500E0811F /* UserAuthenticationApp.swift */,
+				68A6BCEB280567B500E0811F /* ContentView.swift */,
+				68D8578A2805769D00D0D94D /* ProfileView.swift */,
+				68D8578C280576A700D0D94D /* AuthenticationView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		68D8578228056DD800D0D94D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				68D857862805705400D0D94D /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		68D8578328056DDD00D0D94D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				68D85788280570B700D0D94D /* UserViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		B622C1D4C26E105B7B903247 /* Frameworks */ = {
@@ -279,6 +317,7 @@
 			files = (
 				68A6BCF1280567B700E0811F /* Preview Assets.xcassets in Resources */,
 				68A6BCEE280567B700E0811F /* Assets.xcassets in Resources */,
+				68D8578528056ED600D0D94D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,7 +446,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				68A6BCEC280567B500E0811F /* ContentView.swift in Sources */,
+				68D85789280570B700D0D94D /* UserViewModel.swift in Sources */,
+				68D8578D280576A700D0D94D /* AuthenticationView.swift in Sources */,
+				68D8578B2805769D00D0D94D /* ProfileView.swift in Sources */,
 				68A6BCEA280567B500E0811F /* UserAuthenticationApp.swift in Sources */,
+				68D857872805705400D0D94D /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,7 +625,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = AadityaShankar.UserAuthentication;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AadityaShankar.UserAuthentication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -612,7 +655,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = AadityaShankar.UserAuthentication;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AadityaShankar.UserAuthentication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
