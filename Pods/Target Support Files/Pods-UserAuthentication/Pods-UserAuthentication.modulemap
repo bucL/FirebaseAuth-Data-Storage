@@ -1,0 +1,6 @@
+framework module Pods_UserAuthentication {
+  umbrella header "Pods-UserAuthentication-umbrella.h"
+
+  export *
+  module * { export * }
+}
