@@ -27,10 +27,10 @@ struct SignInView: View {
     var body: some View {
         VStack{
             TextField("Email...", text: $email)
-                .autocapitalization(none)
+
                 .disableAutocorrection(true)
             SecureField("Password...", text: $password)
-                .autocapitalization(none)
+
                 .disableAutocorrection(true)
             
             
@@ -58,10 +58,9 @@ struct SignUpView: View {
             TextField("First Name...", text: $firstName)
             TextField("Last Name...", text: $lastName)
             TextField("Email...", text: $email)
-                .autocapitalization(none)
                 .disableAutocorrection(true)
             SecureField("Password...", text: $password)
-                .autocapitalization(none)
+
                 .disableAutocorrection(true)
                         
             
