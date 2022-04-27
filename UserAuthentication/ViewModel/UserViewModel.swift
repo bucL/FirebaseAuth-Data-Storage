@@ -11,10 +11,8 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 class UserViewModel: ObservableObject {
-    // MARK: State
     @Published var user: User?
     
-    // MARK: Properties
     private let auth = Auth.auth()
     private let db = Firestore.firestore()
     var uuid: String? {
@@ -27,11 +25,9 @@ class UserViewModel: ObservableObject {
         user != nil && self.userIsAuthenticated
     }
     
-    // MARK: Firebase Auth Functions
     func signIn(email: String, password: String) {
         auth.signIn(withEmail: email, password: password) { [weak self] result, error in
             guard result != nil, error == nil else { return }
-            // Successfully authenticated the user, now attempting to sync with Firestore
             DispatchQueue.main.async {
                 self?.sync()
             }
@@ -58,7 +54,6 @@ class UserViewModel: ObservableObject {
         }
     }
     
-    // Firestore functions for User Data
     private func sync() {
         guard userIsAuthenticated else {
             return
